@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+    nav a { margin: 0 10px; color: white; text-decoration: none; }
+    section { padding: 50px; }
+    .success-msg { color: green; margin-top: 10px; display: none; }
+    button { padding: 10px 20px; }
+    .feature-item { background: #f0f0f0; margin: 10px 0; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>My Website</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <h2>Welcome to My Website</h2>
+  <p>This is a sample homepage for Cypress testing.</p>
+  <button id="learnBtn">Learn More</button>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>We create awesome websites and web applications.</p>
+</section>
+
+<section id="features">
+  <h2>Our Features</h2>
+  <div class="feature-item">Feature 1: Fast and Responsive</div>
+  <div class="feature-item">Feature 2: Easy to Use</div>
+  <div class="feature-item">Feature 3: Secure and Reliable</div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required /><br><br>
+    <input type="email" name="email" placeholder="Your Email" required /><br><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+    <button type="submit">Submit</button>
+    <p class="success-msg">Thank you! Your message has been sent.</p>
+  </form>
+</section>
+
+<script>
+  document.getElementById('learnBtn').addEventListener('click', () => {
+    alert('Learn More clicked!');
+  });
+
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.querySelector('.success-msg').style.display = 'block';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
